@@ -1,0 +1,70 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.nc'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	
+	//웹 기능 사용
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//WebClient 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	
+	// 외부 연결 커넥션풀 설정 : 호환을 위해 버전관리 필요 -> webClient 사용 권장
+	//implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+	
+	//롬북사용 
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	//메모리에 디비생성
+	runtimeOnly 'com.h2database:h2'  
+	//runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	
+	// 테스트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	//캐싱 기능 사용
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	
+	//JPA 기능 사용
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	// 공백 체크 및 각종 체크를 도와주는 어노테이션을 사용할 수 있게 해주는 Dependency
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	
+	//타임리프 기능 사용
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
+	//aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
