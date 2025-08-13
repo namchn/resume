@@ -2,6 +2,7 @@
 llm-resume-consulting-project
 
 # Resume 프로젝트 구조
+```
 resume/
 ├── aop/
 │ └── ExceptionHandlingAspect : 익셉션 처리 관련 AOP
@@ -39,3 +40,4 @@ resume/
 │ ├── InputSanitizer : 텍스트 보안 변환
 │ └── MessageSourcer : MessageSource 서비스
 └── ResumeApplication : 스프링부트 메인
+```
