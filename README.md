@@ -39,6 +39,6 @@ resume/
 │ └── ValidService : 유효성 검증
 ├── util/
 │ ├── InputSanitizer : 텍스트 보안 변환
-│ └── MessageSourcer : MessageSource 서비스
+│ └── MessageSourceUtil : MessageSource 구현 서비스
 └── ResumeApplication : 스프링부트 메인
 ```
