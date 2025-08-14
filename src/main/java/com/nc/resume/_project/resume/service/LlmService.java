@@ -122,7 +122,7 @@ public class LlmService  {
 		chatLogWriterService.chatLogWrite(messageBodyResponse);
 	    //디비에 저장
 		//loggingService.dbSaveAsync("userId",questionTemplate, studyMapTemplate, response1, response2,"gpt-4","ko");
-		dataLoggingService.dbSaveAsync(new ChatLogResponse().toEntity("userId",questionTemplate, studyMapTemplate, response1, response2,"gpt-4","ko"));
+		dataLoggingService.dbSaveAsync(new ChatLogResponse().toEntity("userId",questionTemplate, studyMapTemplate, response1, response2,"gpt-4","ko",resumeRequest.getTest().equalsIgnoreCase("Y")?"Y":"N"));
 		
 		//return messageBody;
 		return messageBodyResponse;

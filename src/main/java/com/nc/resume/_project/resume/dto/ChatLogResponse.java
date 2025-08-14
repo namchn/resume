@@ -29,7 +29,7 @@ public class ChatLogResponse {
 	private String language; // ex: ko, en 등
 	
 	/* 엔티티 변환 */
-	public ChatLog toEntity(String userId, String requestMessage1,String requestMessage2, String responseMessage1, String responseMessage2, String model, String lang) {
+	public ChatLog toEntity(String userId, String requestMessage1,String requestMessage2, String responseMessage1, String responseMessage2, String model, String lang, String testYn) {
 		
 		return ChatLog.builder()
         .userId(userId)
@@ -39,6 +39,7 @@ public class ChatLogResponse {
         .responseMessage2(responseMessage2)
         .model(model) // "gpt-4" 
         .language(lang)
+        .testYn(testYn)
         .createdAt(LocalDateTime.now())
         .build();
 	}

@@ -50,4 +50,6 @@ public class ChatLog {
     private String language; // ex: ko, en 등
 
     private LocalDateTime createdAt;
+    
+    private String testYn;
 }
