@@ -43,6 +43,10 @@ public class ResumeController  {
         //model.addAttribute("content", "user/detail");
 		
 		
+		List<String> options = List.of("1","2","3","4","5","6","7","8","9","10이상");
+        model.addAttribute("yearsOptions", options);
+		
+		
 		/*
 		List<String> options = List.of("프론트엔드","백엔드","풀스택","iOS","Android","크로스플랫폼 앱","DevOps","인공지능 · 머신러닝","데이터 엔지니어","게임 클라이언트","게임 서버","VR/AR/MR/XR","소프트웨어 엔지니어","QA 엔지니어","하드웨어 엔지니어");
         model.addAttribute("roleOptions", options);
@@ -67,7 +71,37 @@ public class ResumeController  {
         
         return "resume/inputform";
     }
-	
+	@GetMapping("/input2")
+    public String userDetailPage2(Model model) {
+        //model.addAttribute("content", "user/detail");
+		
+		List<String> options = List.of("1","2","3","4","5","6","7","8","9","10이상");
+        model.addAttribute("yearsOptions", options);
+		
+		/*
+		List<String> options = List.of("프론트엔드","백엔드","풀스택","iOS","Android","크로스플랫폼 앱","DevOps","인공지능 · 머신러닝","데이터 엔지니어","게임 클라이언트","게임 서버","VR/AR/MR/XR","소프트웨어 엔지니어","QA 엔지니어","하드웨어 엔지니어");
+        model.addAttribute("roleOptions", options);
+		
+        List<String> checkbox = List.of("C","C++","C#","Java","JavaScript","TypeScript","Python","Ruby","PHP","Kotlin","Go","AngularJS","Electron","Emotion","GraphQL","MobX","NextJS","React-Context","ReactJS","Redux","Recoil","Storybook","Svelte","Tailwind","Unity","VueJS","Vuex","Apache","NGINX","Apollo","ASP.NET","AWS-Kinesis","AWS-SES","Celery","Django","ExpressJS","FastAPI","Flask","GRPC","Hibernate","Koa","Laravel","NestJS","NodeJS","RabbitMQ","Relay","Ruby-on-Rails","Spring","SpringBoot","Swagger","AWS-AuroraDB","AWS-DynamoDB","AWS-MariaDB","CassandraDB","ElasticSearch","MongoDB","MSSQL","MySQL","PostgreSQL","Redis","Airflow","AWS-Athena","Google-BigQuery","Hadoop","Kafka","Keras","Kubeflow","MLflow","Pytorch","Spark","Tableau","Tensorflow","Zeppelin","Flutter","Google-Firebase","Google-Firestore","React-Native","Ansible","AWS-CodePipeline","Azure-DevOps","Bitrise","Circle-CI","Docker","Github","Github-Action","Google-Cloud-Build","Jenkins","Kubernetes","Terraform","Traefik","HTML/CSS","RESTful API","Jira","SCSS","SASS","Android"
+        		,"iOS","Firebase","MariaDB","AWS","AWS-RDS","Git","GitLab","AWS-EC2","AWS-S3","AWS-Route53","Notion","Figma","Jandi","NCP","NoSQL","Sentry","RxJS","ES6","Shell Scripting","AWE","AWS-ECS","Fargate","CloudWatch","SQL","SqlAlchemy","AWS-ECR","Jupyter","Tornado","NLP","JSP","AWS-EBS","Docker Compose","AWS-ELB","Styled-Component","New Relic","Azure-Blob Storage","React-Query","Linux","AWS-Lambda","Pandas","NumPy","Scikit-learn","Vert.x","Docker Swarm","Swift","Perl","R","Scala","Rust","Objective-C","BackboneJS","Gatsby","Immer","NuxtJS","OpenGL","ReactiveX","Google-Web-Server","Armeria","AWS-SNS","AWS-SQS","Fastify","Liquibase","MyBatis","Netty","Thrift","Arcus","AWS-DocumentDB","Ceph","CockroachDB","Couchbase","Cubrid","Greenplum","InfluxDB","Memcached","Neo4j","OracleDB","RocksDB","Solr","AWS-Redshift","Clickhouse","Druid","Flink","Fluentd","Google-Data-Studio","Grafana","HBase","Hive","Impala","Kibana","Kuda","Looker","Luigi","Metabase","NIFI","Presto","Prometheus","Ray","Redash","Superset","Zipkin","Alamofire"
+        		,"Bazel","Dagger","ExoPlayer","Fastlane","Glide","Lottie","ReactorKit","Realm","Retrofit","RIBs","SnapKit","Unreal","DirectX","PhysX","Bullet","Argo-CD","AWS-CodeBuild","Bitbucket","Capistrano","Central-Dogma","Drone","Gitlab-CI","Go-CD","Gulp","Harbor","Helm","Jaeger","Kube-Bench","OpenEBS","Packer","Rundeck","Saltstack","Spinnaker","Travis-CI","Zabbix","RxSwift","Human Tracking","Pose Estimation","Object Detection","Multi-object Tracking","Gstreamer","NNStreamer","Reactive","3D Rendering","Sagemaker","WebGL","Three.js","Paper.js","Webpack","Babel","Jest","Tibero","Alembic","Structlog","Click","Pytest","Vercel","CloudFront","Vite","AWS-CDK","SAM","Elastic","Ubuntu","Zustand","Radash","Unocss","Ajv","Sketch","Adobe Illustrator","Adobe Photoshop","Xd","Blender","Framer","ProtoPie","Adobe InDesign","Adobe After Effects","Adobe Premiere Pro","Mailchimp","Stibee","Salesforce","HubSpot","Nate","Kakao","Tiktok","Linkedin","Meta","Youtube","Google Ads (SA,DA,App, Video)","Naver (SA,DA,shopping)","Microsoft Word","Microsoft Excel","PowerPoint","Power BI","FineReport","BigQuery","Looker Studio","Appsflyer","Airbridge","Hotjar","GTM","Braze","Amplitude","Branch","GA4","3dsMax","Maya","Final Cut Pro","Dart","GetX","Provide","JQuery","PixiJS","RocketMQ","Stable Diffusion","Midjourney","DALL·E","KingFisher","MapKit","UIView Animation","Confluence","Capture One","Adobe","Lightroom","Rhino","KeyShot","CAD","MVVM","LiveData","coroutines","Webview","Room","ViewModel","ViewBinding","DataStore","Hilt","Retrofit2","Jetpack","Compose","Dio","Socket.IO","Zapier","Mixpanel","Prompt","FLUX","Cisco","Okta","Slack","SSO","ActiveDirectory","ActiveDirectoryCertificateServices","NGFW","SSL","Google-Cloud-Platform","SAP","MCU","FreeRTOS","LVGL","Creatie","Qt creator","Altium","STM32WB","GUI","Axure","Solidity","SpringDataJPA","ABAP","TensorBoard","iBATIS","Nexacro","Jotai","Allo","Loki","Tempo","Vulkan","Matlab","Cinema 4D","Octane Renderer","Redshift Renderer","AWS-CodeArtifact","Webflow","Spline","MSA","ZBrush","Substance Painter","Nuke","Mari","Relate","Mixmax","Altibase","SVN",".Net","QueryDSL","SPSS","D3.js","OpenSearch","Lucene","Classic","ASP","Spine2D","Cocos","Studio","AWS-EKS","AWS-EB","Adobe","Animate","CUDA","AutoCAD","Creo","UG/NX","SolidWorks","FlexSim","ExtendSim","Phase","Maze","PCB-Artwork","JUnit","Stomp.js","Embedded","Linux","Computer","Vision","LLM","Datadog","AWX","Langchain","AWS-bedrock","Prettier","ESLint","TanStackRouter","RadixUI","Postman","Revit","Supabase","OpenStack","Adobe XD"
+        		);
+        model.addAttribute("checkboxOptions", checkbox);
+    	//model.addAttribute("home", "link:");
+        */
+        
+		//프런트에서 구현하는게 나을지도
+        List<String> sortedRoles = new ArrayList<>(optionProperties.getRole());
+        //Collections.sort(sortedRoles, String.CASE_INSENSITIVE_ORDER);
+
+        List<String> sortedCheckbox = new ArrayList<>(optionProperties.getCheckbox());
+        Collections.sort(sortedCheckbox, String.CASE_INSENSITIVE_ORDER);
+
+        model.addAttribute("roleOptions", sortedRoles);
+        model.addAttribute("checkboxOptions", sortedCheckbox);
+        
+        return "resume/inputform2";
+    }
 	
 	// un
 	@PostMapping("/submit")

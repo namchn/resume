@@ -9,8 +9,9 @@ import lombok.Data;
 
 @Data
 public class ResumeRequest {
+
+    private String test; //
     
-	
     @NotBlank(message = "경력연차를 선택해주세요.")
     private String years;
 
@@ -25,7 +26,6 @@ public class ResumeRequest {
 
     @NotEmpty(message = "최소 한 개 이상의 보유기술을 선택해주세요.")
     private List<String> skills;
-    
     
     public String toPromptBase() {
         return "경력: " + years + "년차/" + System.lineSeparator()
@@ -43,12 +43,12 @@ public class ResumeRequest {
     
     public String toPromptQuestion1(String basicContent) {
     	return basicContent
-    			+"위와 같은 사용자 정보를 바탕으로 예상되는 심층적인 면접질문 2가지를 만들어줘";
+    			+"위와 같은 사용자 정보를 바탕으로 예상되는 심층적인 면접질문 2가지를 만들어줘,경력 년차에 따른 수준을 고려해서";
     }
     
     public String toPromptQuestion2(String basicContent) {
     	return basicContent
-    			+"위와 같은 사용자 정보를 바탕으로 심화된 자기 개발 학습 로드맵을 만들어줘,추천해줄만한 도서나 관련웹사이트가 있다면 추가로 알려주고";
+    			+"위와 같은 사용자 정보를 바탕으로 심화된 자기 개발 학습 로드맵을 만들어줘,추천해줄만한 도서나 관련웹사이트가 있다면 추가로 알려주고,경력 년차에 따른 수준을 고려해서";
     }
     
 }

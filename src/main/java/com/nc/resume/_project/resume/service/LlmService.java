@@ -83,10 +83,11 @@ public class LlmService  {
 		//자기 개발 학습 경로를 제안
 		String studyMapTemplate =resumeRequest.toPromptQuestion2(basicContent);
 		
-		//테스트는?
-		questionTemplate ="대한민국의수도는?";
-		studyMapTemplate ="미국의수도는?";
-		
+		//프런트에서 테스트 목적 호출
+		if(resumeRequest.getTest().equalsIgnoreCase("Y")) {
+			questionTemplate ="대한민국의수도는?";
+			studyMapTemplate ="미국의수도는?";
+		}
 		//CompletableFuture<String> questionResponse = getChatCompletion(questionTemplate);
 		//CompletableFuture<String> studyMapResponse = getChatCompletion(studyMapTemplate);
 		CompletableFuture<String> questionResponse = getChatCompletionWebClient(questionTemplate);
