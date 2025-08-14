@@ -42,3 +42,14 @@ resume/
 │ └── MessageSourceUtil : MessageSource 구현 서비스
 └── ResumeApplication : 스프링부트 메인
 ```
+
+
+
+
+
+# 추가 개발구현 목표
+
+```
+1. 개인별 로그인, 개인별 응답 저장 및 불러오기.
+2. 질문의 디테일 향상.
+```
