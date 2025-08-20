@@ -43,12 +43,20 @@ public class ResumeRequest {
     
     public String toPromptQuestion1(String basicContent) {
     	return basicContent
-    			+"위와 같은 사용자 정보를 바탕으로 예상되는 심층적인 면접질문 2가지를 만들어줘,경력 년차에 따른 수준을 고려해서";
+    			+"위와 같은 사용자 정보를 바탕으로 예상되는 심층적인 면접질문 5가지를 만들어줘,경력 년차에 따른 수준을 고려해서";
     }
     
     public String toPromptQuestion2(String basicContent) {
     	return basicContent
     			+"위와 같은 사용자 정보를 바탕으로 심화된 자기 개발 학습 로드맵을 만들어줘,추천해줄만한 도서나 관련웹사이트가 있다면 추가로 알려주고,경력 년차에 따른 수준을 고려해서";
+    }
+    
+    public String toPromptTest1() {
+    	return "대한민국의수도는?";
+    }
+    
+    public String toPromptTest2() {
+    	return "미국의수도는?";
     }
     
 }

@@ -85,8 +85,8 @@ public class LlmService  {
 		
 		//프런트에서 테스트 목적 호출
 		if(resumeRequest.getTest().equalsIgnoreCase("Y")) {
-			questionTemplate ="대한민국의수도는?";
-			studyMapTemplate ="미국의수도는?";
+			questionTemplate = resumeRequest.toPromptTest1();
+			studyMapTemplate = resumeRequest.toPromptTest2();
 		}
 		//CompletableFuture<String> questionResponse = getChatCompletion(questionTemplate);
 		//CompletableFuture<String> studyMapResponse = getChatCompletion(studyMapTemplate);
@@ -122,7 +122,16 @@ public class LlmService  {
 		chatLogWriterService.chatLogWrite(messageBodyResponse);
 	    //디비에 저장
 		//loggingService.dbSaveAsync("userId",questionTemplate, studyMapTemplate, response1, response2,"gpt-4","ko");
-		dataLoggingService.dbSaveAsync(new ChatLogResponse().toEntity("userId",questionTemplate, studyMapTemplate, response1, response2,"gpt-4","ko",resumeRequest.getTest().equalsIgnoreCase("Y")?"Y":"N"));
+		dataLoggingService.dbSaveAsync(
+				new ChatLogResponse().toEntity(
+				"userId"
+				,questionTemplate
+				, studyMapTemplate
+				, response1
+				, response2
+				,"gpt-4"
+				,"ko"
+				,resumeRequest.getTest().equalsIgnoreCase("Y")?"Y":"N"));
 		
 		//return messageBody;
 		return messageBodyResponse;

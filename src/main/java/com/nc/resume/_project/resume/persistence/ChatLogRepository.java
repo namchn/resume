@@ -1,6 +1,4 @@
-package com.nc.resume._project.resume.jpaRepository;
-
-import java.util.List;
+package com.nc.resume._project.resume.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

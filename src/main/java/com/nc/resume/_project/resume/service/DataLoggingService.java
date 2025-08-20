@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nc.resume._project.resume.entity.ChatLog;
-import com.nc.resume._project.resume.jpaRepository.ChatLogRepository;
+import com.nc.resume._project.resume.persistence.ChatLogRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
