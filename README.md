@@ -21,7 +21,7 @@ resume/
 │ └── ResumeResponse : ResponseEntity에 반환 응답
 ├── entity/
 │ └── ChatLog : 응답결과 엔티티
-├── JpaRepository/
+├── persistence/
 │ └── ChatLogRepository : 응답결과 레포지토리
 ├── properties/
 │ ├── LlmProperties : 설정값 모음
@@ -30,7 +30,7 @@ resume/
 │ ├── impl/
 │ │ └── OpenAiClient : 웹 호출 서비스 구현
 │ └── Main/
-│ └── MainFacadeService : 주요 서비스 모음
+│ │ └──  MainFacadeService : 주요 서비스 모음
 │ ├── ChatLogWriterService : 로그 기록 파일 저장
 │ ├── DataLoggingService : 로그 기록 DB 저장
 │ ├── LlmCallCounter : 호출수 카운팅
