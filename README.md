@@ -48,7 +48,7 @@ resume/
 # 할일
 
 ```
-1. ci/cd  aws에 구현
+1. ci/cd  aws에 구현 -> https://test.nc2030.com/api/resume/input2
 2. 다른 프로젝트와의 통합 구현 (https://test.nc2030.com)
 
 ```
