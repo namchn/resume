@@ -1,6 +1,13 @@
 # resume
 llm-resume-consulting-project
 
+
+
+#구현 테스트 주소
+```
+https://test.nc2030.com/api/resume/input2
+```
+
 # Resume 프로젝트 구조
 
 ```
@@ -41,6 +48,17 @@ resume/
 │ ├── InputSanitizer : 텍스트 보안 변환
 │ └── MessageSourceUtil : MessageSource 구현 서비스
 └── ResumeApplication : 스프링부트 메인
+```
+
+
+# 개선점
+
+```
+1.Prompt/Response 후처리 계층 추가 (프롬프트 전략 관리, 결과 리파인)
+2.API 도메인별 Controller & DTO 패키지 분리
+3.Logging/Storage/Monitoring 모듈화 → 테스트 가능성 향상
+4.Resilience 레이어 (Retry, CircuitBreaker, RateLimit) 도입
+
 ```
 
 
